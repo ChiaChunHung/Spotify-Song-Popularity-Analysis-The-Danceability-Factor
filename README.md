@@ -1,13 +1,13 @@
 # 🎵 Spotify Song Popularity Analysis: The Danceability Factor
-
 > Exploring the relationship between danceability and song popularity using data from 232,000+ Spotify tracks
 
-[![Python](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/)
-[![Pandas](https://img.shields.io/badge/Pandas-2.0+-green.svg)](https://pandas.pydata.org/)
-[![StatsModels](https://img.shields.io/badge/StatsModels-0.14.6-orange.svg)](https://www.statsmodels.org/)
-[![License](https://img.shields.io/badge/License-Academic-red.svg)]()
+## Project Resources
 
-## 📊 Project Overview
+- [📝 Project Brief](./Project_Brief.pdf)
+- [📊 Presentation Slides](./Slides.pdf)
+
+
+## Project Overview
 
 In a music market where **100,000+ songs are uploaded daily** to Spotify, what truly makes a song stand out? This project investigates whether **danceability**—a song's rhythmic suitability for dancing—is associated with higher popularity on Spotify.
 
@@ -17,7 +17,7 @@ Using a comprehensive dataset of 232,726 tracks and multiple linear regression a
 - Genre-specific patterns in music success
 - The limitations of predicting popularity from audio features alone
 
-### 🎯 Research Question
+### Research Question
 
 **Do songs with higher danceability achieve higher popularity on Spotify?**
 
@@ -25,7 +25,7 @@ Using a comprehensive dataset of 232,726 tracks and multiple linear regression a
 
 ---
 
-## 👥 Team
+## Team
 
 **Team C4 - GSBA 545 Final Regression Project**
 
@@ -39,7 +39,7 @@ Using a comprehensive dataset of 232,726 tracks and multiple linear regression a
 
 ---
 
-## 📁 Dataset
+## Dataset
 
 ### Source
 - **Dataset**: [Spotify Features.csv](https://www.kaggle.com/datasets/somumourya/spotifyfeaturescsv-1)
@@ -63,7 +63,7 @@ Using a comprehensive dataset of 232,726 tracks and multiple linear regression a
 
 ---
 
-## 🔬 Methodology
+## Methodology
 
 ### 1. Ideal Experimental Design
 
@@ -106,7 +106,7 @@ Data Collection → Cleaning → EDA → Model Building → Validation → Inter
 
 ---
 
-## 📈 Key Findings
+## Key Findings
 
 ### Descriptive Statistics
 
@@ -156,19 +156,19 @@ Popularity = β₀ + β₁(Danceability) + β₂(Energy) + β₃(Valence) + β�
 
 ### Key Interpretations
 
-✅ **Danceability has a positive, statistically significant effect on popularity**
+**Danceability has a positive, statistically significant effect on popularity**
 - **Effect size**: +15.90 points in popularity per 1-unit increase in danceability
 - **Practical interpretation**: A 0.10 increase in danceability → ~1.6 point increase in popularity
 - Holding all other variables constant
 
-⚠️ **Energy, Valence, and Acousticness show negative associations**
+**Energy, Valence, and Acousticness show negative associations**
 - May reflect mainstream preferences for polished, electronic production
 - Suggests complexity in listener preferences
 
-✅ **Loudness positively associated with popularity** (+0.98)
+**Loudness positively associated with popularity** (+0.98)
 - Aligns with modern streaming mastering practices
 
-📊 **Model explains ~21% of variation**
+**Model explains ~21% of variation**
 - Reasonable given that popularity depends on non-audio factors:
   - Marketing budgets
   - Playlist placement
@@ -184,16 +184,16 @@ Different genres show varying relationships between danceability and popularity:
 
 | Genre | Danceability-Popularity Pattern |
 |-------|--------------------------------|
-| **Indie** | ✅ Positive trend |
-| **Jazz** | ✅ Positive trend |
-| **Soundtrack** | ⚠️ Slightly negative |
-| **Comedy** | ⚠️ Slightly negative |
+| **Indie** |  Positive trend |
+| **Jazz** |  Positive trend |
+| **Soundtrack** |  Slightly negative |
+| **Comedy** |  Slightly negative |
 
 **Insight**: Danceability's influence varies by musical context and audience expectations.
 
 ---
 
-## 🔍 Prediction Example
+## Prediction Example
 
 ### Test Case: "Submerge" by Movements (Row 12345)
 
@@ -221,21 +221,21 @@ Time Signature: 3/4
 
 ---
 
-## ⚠️ Limitations & Considerations
+## Limitations & Considerations
 
 ### 1. **Observational Data Constraints**
-- ❌ Songs aren't randomly assigned → **correlations, not causation**
+-  Songs aren't randomly assigned → **correlations, not causation**
 - Cannot definitively prove danceability *causes* popularity
 - Confounding variables may bias estimates
 
 ### 2. **Missing Variables**
 Factors not captured in the dataset but likely influential:
-- 🎤 Artist fame and fanbase size
-- 📱 Social media virality (TikTok, Instagram Reels)
-- 📋 Playlist placement (Spotify editorial picks)
-- 💰 Marketing budgets
-- 🗓️ Release timing and trends
-- 🎬 Use in TV/movies/commercials
+-  Artist fame and fanbase size
+-  Social media virality (TikTok, Instagram Reels)
+-  Playlist placement (Spotify editorial picks)
+-  Marketing budgets
+-  Release timing and trends
+-  Use in TV/movies/commercials
 
 ### 3. **Platform-Specific Metrics**
 - **Spotify's popularity algorithm** is proprietary and opaque
@@ -257,7 +257,7 @@ Factors not captured in the dataset but likely influential:
 
 ## 💡 Key Takeaways
 
-### ✅ What We Learned
+###  What We Learned
 
 1. **Danceability matters, but isn't everything**
    - Statistically significant positive effect
@@ -278,9 +278,9 @@ Factors not captured in the dataset but likely influential:
 ### 📊 Business Implications
 
 **For Artists & Producers**:
-- ✅ Boosting danceability can help, especially in pop/dance genres
-- ⚠️ Don't sacrifice artistic vision solely for metrics
-- 🎯 Consider genre norms when optimizing audio features
+- Boosting danceability can help, especially in pop/dance genres
+- Don't sacrifice artistic vision solely for metrics
+- Consider genre norms when optimizing audio features
 
 **For Music Platforms**:
 - Use audio features as part of recommendation algorithms
@@ -291,74 +291,6 @@ Factors not captured in the dataset but likely influential:
 - Need richer datasets including marketing/promotion data
 - Explore nonlinear relationships and interaction effects
 - Consider time-series analysis for trend dynamics
-
----
-
-## 🛠️ Technical Implementation
-
-### Prerequisites
-
-```bash
-# Python 3.12+
-# Required packages:
-pip install pandas numpy statsmodels matplotlib seaborn jupyter
-```
-
-### Running the Analysis
-
-```python
-import pandas as pd
-import statsmodels.api as sm
-
-# Load data
-df = pd.read_csv('SpotifyFeatures.csv')
-
-# Define variables
-X_cols = ['danceability', 'energy', 'valence', 'acousticness', 'loudness']
-y_col = 'popularity'
-
-# Clean data
-data_clean = df.dropna(subset=X_cols + [y_col])
-X = data_clean[X_cols]
-y = data_clean[y_col]
-X = sm.add_constant(X)
-
-# Fit model
-model = sm.OLS(y, X).fit()
-print(model.summary())
-
-# Make prediction
-prediction = model.get_prediction(X.loc[12345])
-print(prediction.summary_frame(alpha=0.05))
-```
-
-### Repository Structure
-
-```
-spotify-popularity-analysis/
-│
-├── data/
-│   └── SpotifyFeatures.csv          # Raw dataset (not included - download from Kaggle)
-│
-├── notebooks/
-│   └── spotify_analysis.ipynb       # Main analysis notebook
-│
-├── reports/
-│   ├── BA_Spotify.docx              # Full technical report
-│   ├── Full_Scripts_for_this.docx   # Presentation script
-│   └── DSO510_TeamC4_spotify.pptx   # Final presentation
-│
-├── visualizations/
-│   ├── correlation_matrix.png
-│   ├── danceability_popularity_scatter.png
-│   ├── residual_plot.png
-│   └── genre_comparison.png
-│
-├── README.md                         # This file
-└── requirements.txt                  # Python dependencies
-```
-
----
 
 ## 📚 References & Resources
 
@@ -379,30 +311,6 @@ spotify-popularity-analysis/
 
 ---
 
-## 📧 Contact
-
-**Team C4**
-
-For questions, suggestions, or collaboration opportunities, please reach out to team members:
-
-- Xiaoyu Ma
-- Dat Nguyen  
-- Hsin-Pan Chen
-- Zhengyuan Pei
-- Chia-Chun Hung
-- Victoria Nguyen
-- Yang-Hsuan Lin
-
----
-
-## 📝 License
-
-This project is submitted as part of academic coursework at USC Marshall School of Business. 
-
-**Academic Use Only** - Please cite appropriately if referencing this work.
-
----
-
 ## 🙏 Acknowledgments
 
 - **Somu Mourya** for publishing the Spotify Features dataset on Kaggle
@@ -412,7 +320,7 @@ This project is submitted as part of academic coursework at USC Marshall School 
 
 ---
 
-## 📊 Appendix: Model Diagnostics
+## Appendix: Model Diagnostics
 
 ### Variance Inflation Factor (VIF)
 All VIF values < 5, indicating acceptable multicollinearity levels despite correlations.
@@ -423,16 +331,6 @@ All VIF values < 5, indicating acceptable multicollinearity levels despite corre
 - No extreme outliers detected
 
 ### Robustness Checks Conducted
-✅ Removed Energy → R² decreased to 0.200  
-✅ Removed Loudness → R² decreased to 0.183  
-✅ Conclusion: All variables provide unique information
-
----
-
-**Last Updated**: January 2026  
-**Project Status**: ✅ Completed  
-**Version**: 1.0
-
----
-
-*"Danceability boosts a song's chances, but doesn't guarantee a hit. A song still needs the right emotional and musical context to truly break through."*
+Removed Energy → R² decreased to 0.200  
+Removed Loudness → R² decreased to 0.183  
+Conclusion: All variables provide unique information

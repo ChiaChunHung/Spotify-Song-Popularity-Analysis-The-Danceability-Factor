@@ -3,7 +3,7 @@
 
 ## Project Resources
 
-- [📝 Project Brief](./Project_Brief.pdf)
+- [📝 Project Brief](./Spotify_Project_Brief.pdf)
 - [📊 Presentation Slides](./Slides.pdf)
 
 
